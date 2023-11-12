@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mayordomo-app">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <script src="js/angularjs/1.4.7/angular.min.js"></script>
+    <script src="js/angularjs/1.4.7/angular-resource.js"></script>
+    <script src="js/global-charts-options.js"></script>
+
+    <script src="js/mayordomo-controller.js"></script>
+
+    <script src="js/highcharts/highcharts.src.js"></script>
+    <script src="js/highcharts/highcharts-more.src.js"></script>
+
+
+
+    <link href="css/mayordomo.css" rel="stylesheet" type="text/css">
+
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-controller="MayordomoController">
+<div ng-class="{'device-on': devices['acs'].soft_status==true, 'device-off': devices['acs'].soft_status==false, 'device-paused': devices['acs'].rele_status==false}"
+     ng-click="toggleDevice('acs', devices['acs'])" class="caldera"
+     id="container-caldera"
+     style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+
+<div class="calefaccion-wrapper">
+    <div class="calefaccion">
+        <div ng-class="{'device-on': devices['jordi'].soft_status==true, 'device-off': devices['jordi'].soft_status==false, 'device-paused': devices['jordi'].rele_status==false}"
+             ng-click="toggleDevice('jordi', devices['jordi'])"
+             class="calefaccion-devices"
+             id="container-jordi"
+             style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+        <div ng-class="{'device-on': devices['nuri'].soft_status==true, 'device-off': devices['nuri'].soft_status==false, 'device-paused': devices['nuri'].rele_status==false}"
+             ng-click="toggleDevice('nuri', devices['nuri'])"
+             class="calefaccion-devices" id="container-nuri"
+             style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+        <div ng-class="{'device-on': devices['papa'].soft_status==true, 'device-off': devices['papa'].soft_status==false, 'device-paused': devices['papa'].rele_status==false}"
+             ng-click="toggleDevice('papa', devices['papa'])"
+             class="calefaccion-devices" id="container-papa"
+             style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+    </div>
+</div>
+</body>
+</html>

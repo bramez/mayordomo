@@ -1,0 +1,22 @@
+{
+  "jordi": {
+    "name": "jordi",
+    "device": "false"
+  },
+
+  "papa": {
+    "name": "papa",
+    "device": "false"
+  },
+  "nuri": {
+    "name": "nuri",
+    "device": object
+  }
+}
+
+
+[
+  {"name":  "jordi", "status":  false},
+  {"name":  "nuri", "status":  false},
+  {"name":  "papa", "status":  false}
+]

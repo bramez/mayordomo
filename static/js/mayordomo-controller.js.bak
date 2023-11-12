@@ -1,0 +1,71 @@
+var mayordomoApp = angular.module("mayordomo-app", []);
+
+mayordomoApp.controller("MayordomoController", function ($http, $scope) {
+
+
+    getDevices();
+    function getDevices() {
+
+
+        $http.get("http://mayordomo.bramez.com:8080/devices").
+            success(function (data, status, headers, config) {
+                $scope.devices = data.devices;
+                temperaturaCaldera = $scope.devices[0].temperature;
+                temperaturaCalefaccionJordi = $scope.devices['jordi'].temperature;
+                temperaturaCalefaccionNuri = $scope.devices['nuri'].temperature;
+                temperaturaCalefaccionPapa = $scope.devices['papa'].temperature;
+
+                if (temperaturaCaldera != null)
+                    chartCaldera.series[0].points[0].update(temperaturaCaldera);
+
+                if (temperaturaCalefaccionJordi != null)
+                    chartCalefaccionJordi.series[0].points[0].update(temperaturaCalefaccionJordi);
+
+                if (temperaturaCalefaccionPapa != null)
+                    chartCalefaccionPapa.series[0].points[0].update(temperaturaCalefaccionPapa);
+
+                if (temperaturaCalefaccionNuri != null)
+                    chartCalefaccionNuri.series[0].points[0].update(temperaturaCalefaccionNuri);
+
+
+                console.log(data.devices);
+            });
+    }
+
+
+    setInterval(getDevices, 5000);
+
+
+    function setColorCaldera(color) {
+        chartCaldera.yAxis[0].plotLinesAndBands[3].svgElem.attr({
+            fill: color
+        });
+    }
+
+
+    $scope.toggleDevice = function (device, chartCaldera, $scope) {
+        if (device['status'] == 1) {
+            device['status'] = 0
+        } else {
+            device['status'] = 1
+        }
+        $http.put("http://mayordomo.bramez.com:8080/device", device).success(function (result) {
+            console.log(result);
+        }).error(function () {
+            if (device['status'] == 1) {
+
+                device['status'] = 0
+            }
+            else
+                device['status'] = 1
+            console.log("error");
+        });
+    }
+
+
+    var chartCaldera = new Highcharts.Chart(calderaChartOptions);
+    var chartCalefaccionJordi = new Highcharts.Chart(calefaccionJordiOptions);
+    var chartCalefaccionPapa = new Highcharts.Chart(calefaccionPapaOptions);
+    var chartCalefaccionNuri = new Highcharts.Chart(calefaccionNuriOptions);
+})
+;

@@ -1,0 +1,117 @@
+/* Círculos de colores numerados */
+.red {
+    background: #d82e00;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
+
+.grey {
+    background: #cccccc;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
+
+.green {
+    background: #6bfe72;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
+
+.blue {
+    background: #5178D0;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
+
+.caldera {
+    text-align: center;
+
+}
+
+.caldera .temperature {
+    margin-top: 40px;
+    font-size: 54px;
+    text-align: center;
+}
+
+.caldera .name {
+    font-size: 24px;
+    text-align: center;
+}
+
+.calefaccion .name {
+    font-size: 24px;
+    text-align: center;
+}
+
+.calefaccion {
+    text-align: center;
+    display: table;
+    width: 55%;
+    margin: 0 auto;
+}
+
+.calefaccion-devices {
+    display: table-cell;
+    text-align: center;
+    width: 25%;
+
+}
+
+.device-on .highcharts-data-labels rect {
+    fill: #0bf300 !important;
+
+}
+
+.device-off .highcharts-data-labels rect {
+    fill: #ff0030 !important;
+
+}
+
+.device-on.device-paused .highcharts-data-labels rect {
+    fill: #0fa4f3 !important;
+}
+
+.device-off .highcharts-data-labels g text {
+    text-align: center;
+    border: 1px solid ! important;
+
+}
+
+.device-on .highcharts-data-labels tspan {
+    margin-top: 40px !important;
+    top: -20px !important;
+
+}
